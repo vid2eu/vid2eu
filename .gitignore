@@ -1,0 +1,14 @@
+node_modules
+.env
+**/.env
+!**/.env.example
+dist
+*.log
+data
+
+# The service repos, cloned next to this one for local development (see DEPLOY.md)
+/vid2eu-api/
+/vid2eu-storage/
+/vid2eu-transcoder/
+/vid2eu-web/
+/vid2eu-soon/

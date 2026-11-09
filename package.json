@@ -1,0 +1,21 @@
+{
+  "name": "vid2eu",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "setup": "sh scripts/setup.sh",
+    "deploy": "docker compose up -d --build",
+    "db:migrate": "npm run migrate -w @vid2eu/db",
+    "db:generate": "npm run generate -w @vid2eu/db",
+    "typecheck": "npm exec -ws --if-present -- tsc --noEmit -p ."
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@vid2eu/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Table definitions, database client and migrations shared by the vid2eu services",
+  "exports": {
+    "./schema": "./src/schema/index.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "drizzle-orm": "^1.0.0-rc.5-ab785fc",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^1.0.0-rc.5-ab785fc"
+  }
+}

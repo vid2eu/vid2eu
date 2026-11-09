@@ -1,0 +1,12 @@
+# Keep the build context small and secrets out of images.
+**/node_modules
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+**/.git
+.github
+data
+scripts
+vid2eu-*
+**/*.md

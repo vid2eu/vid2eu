@@ -1,0 +1,36 @@
+# Builds the vid2eu images from local source instead of pulling them. Compose loads this
+# file automatically next to docker-compose.yml, so `docker compose up -d --build` builds
+# and tags ${VID2EU_IMAGE}-<service>:${VID2EU_TAG}. It expects the service repos cloned
+# next to it, with their core submodule (see DEPLOY.md). An install made with
+# scripts/setup.sh outside a checkout doesn't have this file, and pulls the images instead.
+
+services:
+  migrate:
+    build:
+      context: .
+      args:
+        NODE_VERSION: ${NODE_VERSION:-26}
+
+  api:
+    build:
+      context: ./vid2eu-api
+      args:
+        NODE_VERSION: ${NODE_VERSION:-26}
+
+  storage:
+    build:
+      context: ./vid2eu-storage
+      args:
+        NODE_VERSION: ${NODE_VERSION:-26}
+
+  transcoder:
+    build:
+      context: ./vid2eu-transcoder
+      args:
+        NODE_VERSION: ${NODE_VERSION:-26}
+
+  web:
+    build:
+      context: ./vid2eu-web
+      args:
+        NODE_VERSION: ${NODE_VERSION:-26}
